@@ -29,3 +29,7 @@ Joystick * OI::getWinchJoystick()
 	return winchJoystick;
 
 }
+Button * OI::getShootButton()
+{
+	return ShooterButton;
+}

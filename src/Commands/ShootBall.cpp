@@ -1,34 +1,41 @@
-#include "MoveWinch.h"
-#include "Subsystems/Winch.h"
-MoveWinch::MoveWinch() {
-	Requires(winchDrive);
+#include <Commands/ShootBall.h>
+
+ShootBall::ShootBall() {
+	Requires(ballShooter);
 	// Use Requires() here to declare subsystem dependencies
-	// eg. Requires(Robot::chassis.get());
+
 }
 
 // Called just before this Command runs the first time
-void MoveWinch::Initialize() {
+void ShootBall::Initialize() {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void MoveWinch::Execute() {
-	double winchValue = oi->getWinchJoystick()->GetY();
-	winchDrive -> moveWinch(winchValue);
+void ShootBall::Execute() {
+	bool getButton = oi->getShootButton()->Get();
+	if(getButton==true)
+	{
+	ballShooter->ShootBall(.5);
+	}
+	else
+	{
+		ballShooter->ShootStop();
+	}
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool MoveWinch::IsFinished() {
+bool ShootBall::IsFinished() {
 	return false;
 }
 
 // Called once after isFinished returns true
-void MoveWinch::End() {
+void ShootBall::End() {
 
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void MoveWinch::Interrupted() {
+void ShootBall::Interrupted() {
 
 }
