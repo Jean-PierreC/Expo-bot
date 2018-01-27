@@ -10,13 +10,14 @@ public:
 	Joystick * getRightJoystick();
 	Joystick * getLeftJoystick();
 	Joystick * getWinchJoystick();
+	Button * getShootButton();
 
 
 private:
 	Joystick * leftJoystick;
 	Joystick * rightJoystick;
 	Joystick * winchJoystick;
-	Button * ShooterButton;
+	JoystickButton * ShooterButton;
 	const int LEFT_JOY_PORT = 0;
 	const int RIGHT_JOY_PORT = 0;
 };

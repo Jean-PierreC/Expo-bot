@@ -13,7 +13,7 @@ void Winch::moveWinch(double winchValue) {
 	talonWinch -> Set(winchValue);
 }
 void Winch::InitDefaultCommand() {
-	SetDefaultCommand(new MoveWinch());
+SetDefaultCommand(new MoveWinch());
 	// Set the default command for a subsystem here.
 	// SetDefaultCommand(new MySpecialCommand());
 }

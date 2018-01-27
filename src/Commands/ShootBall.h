@@ -2,10 +2,9 @@
 #define Shoot_H
 
 #include "../CommandBase.h"
-
-class Shoot : public CommandBase {
+class ShootBall : public CommandBase {
 public:
-	Shoot();
+	ShootBall();
 	void Initialize();
 	void Execute();
 	bool IsFinished();
